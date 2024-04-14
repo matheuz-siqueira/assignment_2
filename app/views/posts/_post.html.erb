@@ -1,0 +1,11 @@
+<div id="<%= dom_id post %>">
+  <div>
+    <strong>Title:</strong>
+    <%= link_to post.title,  post_path(post)%>
+  </div>
+
+  <div>
+    <strong>Autor:</strong>
+    <%= post.user.name%>
+  </div>
+</div>

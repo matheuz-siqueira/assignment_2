@@ -1,0 +1,24 @@
+<div class="show-post">
+    <h1> <%= @post.title %> </h1>
+   
+    <div>
+        <span>Content: </span>
+        <text-area>
+            <%= @post.body %>
+        </text-area>
+    </div>
+
+    <div>
+        <strong>Author:</strong>
+        <span><%= @post.user.name %> </span>
+    </div>
+
+    <br>
+    <div>
+        <%= link_to "Back to feed", root_path %>
+
+        <% if @current_user && @post.user.id == @current_user.id %>
+            <%= link_to "Edit", edit_post_path(@post) %>    
+        <% end %>
+    </div>
+</div>

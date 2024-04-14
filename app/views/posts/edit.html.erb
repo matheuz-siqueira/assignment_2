@@ -1,0 +1,18 @@
+<h2>Update Post</h2>
+
+<%= form_with model: @post do |form| %>
+    <div>
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+    </div>
+
+    <div>
+        <%= form.label :body %>
+        <%= form.text_field :body %>
+    </div>
+
+    <div>
+        <%= form.submit 'Edit' %>
+    </div>
+<% end %>
+<%= link_to "Back to feed", feed_path %>
