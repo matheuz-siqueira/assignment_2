@@ -6,10 +6,11 @@ class PostsController < ApplicationController
   def show; end
 
   def new
-    unless session[:user_id]
-      flash[:alert] = "you must be logged in to create a post"
+    if session[:user_id] 
+      @post = Post.new 
+    else 
+      redirect_to new_login_path, alert: 'you must be logged in to create a post'
     end
-    @post = Post.new 
   end
 
   def create

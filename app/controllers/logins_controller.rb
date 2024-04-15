@@ -18,7 +18,7 @@ class LoginsController < ApplicationController
   end
 
   def destroy
-    binding.pry
+    # binding.pry
     if session[:user_id]
       session[:user_id] = nil 
       flash[:notice] = 'Logged out successfully'
